@@ -2,7 +2,7 @@ from Deck import Deck
 
 class Blackjack(self):
 
-    def __init__(self, initial_balance)
+    def __init__(self, initial_balance):
         self.player_hand = []
         self.dealer_hand = []
         
@@ -13,8 +13,6 @@ class Blackjack(self):
 
         self.deck = Deck()
         self.deck.init_deck()
-
-        self.player_balance = initial_balance
 
     def player_hit(self):
         self.player_hand.append(self.deck.draw())
@@ -48,12 +46,13 @@ class Blackjack(self):
                 if total < 21:
                     total+10
                 aces -= 1
-        if total
+        if total > 21:
+            self.check_winner()
 
     def dealers_turn(self):
         while self.dealer_tot < 17:
             self.dealer_hit()
-        check_winner
+        self.check_winner()
     
     def check_winner(self):
         if self.player_tot > 21:
@@ -72,7 +71,12 @@ class Blackjack(self):
                 self.winner = "Player"
 
     def new_game(self):
+        self.deck.init()  
         
+        self.player_hit()
+        self.dealer_hit()
+        self.player_hit()
+        self.dealer_hit()
 
 if __name__ == "__main__":
     deck = Deck()
