@@ -20,14 +20,14 @@ class Deck:
             for value in values:
                 card = Card(suit,value)
                 self.cards.append(card)
-        self.shuffle_deck()
+        self.shuffle()
 
     def shuffle(self):
         random.shuffle(self.cards)
 
     def reset(self):
         self.card = self.discard + self.cards
-        self.shuffle_deck()
+        self.shuffle()
 
 class Card:
 
