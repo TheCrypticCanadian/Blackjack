@@ -2,11 +2,7 @@ from Deck import Deck
 
 class Blackjack():
 
-<<<<<<< HEAD
     def __init__(self):
-=======
-    def __init__(self, initial_balance):
->>>>>>> 508e88981cf0b00326d64d35efe5cd9b1e49a706
         self.player_hand = []
         self.dealer_hand = []
         
@@ -18,7 +14,6 @@ class Blackjack():
 
         self.deck = Deck()
 
-<<<<<<< HEAD
 
     def print_turn(self):
         print("Player has: ")
@@ -37,8 +32,6 @@ class Blackjack():
 
         print("")
 
-=======
->>>>>>> 508e88981cf0b00326d64d35efe5cd9b1e49a706
     def player_hit(self):
         self.player_hand.append(self.deck.draw())
         self.calc_total("Player")
@@ -72,7 +65,6 @@ class Blackjack():
                 if total < 21:
                     total+10
                 aces -= 1
-<<<<<<< HEAD
         
         if who == "Player":
             self.player_tot = total
@@ -80,19 +72,12 @@ class Blackjack():
             self.dealer_tot = total
         
         if self.player_tot > 21:
-=======
-        if total > 21:
->>>>>>> 508e88981cf0b00326d64d35efe5cd9b1e49a706
             self.check_winner()
 
     def dealers_turn(self):
         while self.dealer_tot < 17:
             self.dealer_hit()
-<<<<<<< HEAD
-        check_winner()
-=======
         self.check_winner()
->>>>>>> 508e88981cf0b00326d64d35efe5cd9b1e49a706
     
     def check_winner(self):
         if self.player_tot > 21:
@@ -124,7 +109,6 @@ class Blackjack():
                 self.win_message = "Player wins the game"
 
     def new_game(self):
-<<<<<<< HEAD
         self.deck.init()
         
         self.player_hand = []
@@ -132,14 +116,6 @@ class Blackjack():
         self.player_tot = 0
         self.dealer_tot = 0
 
-        self.player_hit()
-        self.dealer_hit()
-        self.player_hit()
-        self.dealer_hit()
-=======
-        self.deck.init()  
->>>>>>> 508e88981cf0b00326d64d35efe5cd9b1e49a706
-        
         self.player_hit()
         self.dealer_hit()
         self.player_hit()
