@@ -26,6 +26,11 @@ class Window(QWidget):
         self.setGeometry(top, left, width, height)
         #self.setWindowIcon(QIcon(icon))
         
+    def display_hands():
+        pass
+
+    def display_end():
+        pass
 
 if __name__ == "__main__":
     app = QApplication([])
