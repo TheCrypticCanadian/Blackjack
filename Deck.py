@@ -54,6 +54,7 @@ class Card:
         print(f'|    {self.value:>2} |')
         print('└───────┘')
 
+
 if __name__ == "__main__":
     card = Card(1, 10)
     card.print()

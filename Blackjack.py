@@ -31,6 +31,10 @@ class Blackjack():
             print(line)
 
     def print_turn(self):
+        print()
+        print()
+        print()
+
         print("Player: ")
         self.print_hand("player")
 
@@ -54,7 +58,7 @@ class Blackjack():
 
             print(self.win_message)
         else:
-            print(self.dealer_hand[0].print())
+            self.dealer_hand[0].print()
 
         print("")
 
