@@ -31,9 +31,7 @@ class Blackjack():
             print(line)
 
     def print_turn(self):
-        print("Player has: ")
-        #for card in self.player_hand:
-        #    print(card.value)
+        print("Player: ")
         self.print_hand("player")
 
         print("")
@@ -43,8 +41,20 @@ class Blackjack():
 
         print("")
 
-        print("Dealer card: ")
-        print(self.dealer_hand[0].print())
+        print("Dealer: ")
+        if self.winner:
+            self.print_hand("dealer")
+
+            print("")
+
+            print("Total: ")
+            print(self.dealer_tot)
+
+            print("")
+
+            print(self.win_message)
+        else:
+            print(self.dealer_hand[0].print())
 
         print("")
 
@@ -53,7 +63,7 @@ class Blackjack():
         self.calc_total("Player")
 
     def player_stand(self):
-        self.check_winner()
+        self.dealers_turn()
 
     def dealer_hit(self):
         self.dealer_hand.append(self.deck.draw())
@@ -99,6 +109,10 @@ class Blackjack():
         if self.player_tot > 21:
             self.winner = "Dealer"
             self.win_message = "Player went bust"
+        
+        elif self.dealer_tot > 21:
+            self.winner = "Player"
+            self.win_message = "Dealer went bust"
 
         elif self.player_tot == 21:
 
