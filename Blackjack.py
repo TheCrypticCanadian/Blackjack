@@ -13,7 +13,11 @@ class Blackjack():
         self.win_message = ""
 
         self.deck = Deck()
+        
+        
 
+    def print_player(self):
+        for card in self.player_hand:
 
     def print_turn(self):
         print("Player has: ")
