@@ -14,15 +14,27 @@ class Blackjack():
 
         self.deck = Deck()
         
-        
+    def print_hand(self,hand):
+        if hand == "player":
+            cards = self.player_hand
+        else:
+            cards = self.dealer_hand
 
-    def print_player(self):
-        for card in self.player_hand:
+        lines = ['','','','','','','']
+        for card in cards:
+            cur_line=0
+            card_parts = card.hand_string()
+            for part in card_parts:
+                lines[cur_line] += part
+                cur_line += 1
+        for line in lines:
+            print(line)
 
     def print_turn(self):
         print("Player has: ")
-        for card in self.player_hand:
-            print(card.value)
+        #for card in self.player_hand:
+        #    print(card.value)
+        self.print_hand("player")
 
         print("")
 
@@ -32,7 +44,7 @@ class Blackjack():
         print("")
 
         print("Dealer card: ")
-        print(self.dealer_hand[0].value)
+        print(self.dealer_hand[0].print())
 
         print("")
 
